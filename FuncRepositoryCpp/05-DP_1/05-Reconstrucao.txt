@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+const int MAXN = 1e5 + 7;
+vector<int> adj[MAXN];
+
+int solve() {
+    // Como atualizar as tabelas
+
+    // dp[i] - Guarda o melhor valor para aquela posição
+    // rec[i] - Guarda de qual posição anterior veio o valor
+
+    int n = 5;
+
+    vector<long long> dp(n, LLONG_MIN);
+    vector<int> rec(n, -1);
+
+    int start = 0;
+    dp[start] = 0;
+
+    for (int u = 0; u < n; u++) {
+        for (int v : adj[u]) {
+            long long cand = dp[u] + w[u][v];
+
+            if (cand > dp[v]) {
+                dp[v] = cand;
+                rec[v] = u;
+            }
+        }
+    }
+
+// Como reconstruir a resposta
+
+    vector<int> caminho;
+
+    int s = estado_final;
+
+    while (s != estado_base) {
+        caminho.push_back(s);
+        s = rec[s];
+    }
+
+    caminho.push_back(estado_base);
+    reverse(caminho.begin(), caminho.end());
+
+}

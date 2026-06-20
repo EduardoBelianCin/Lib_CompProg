@@ -1,0 +1,79 @@
+# Bit Shifting
+
+(1 << n) == 2^n
+
+o 1 foi empurrado 4 vezes pra esquerda
+
+// para esquerda: multiplica por 2
+// para direita:  divide por 2
+
+
+# Operações básicas
+
+// AND: x & y
+// OR: x | y
+// XOR: x ^ y
+
+// Ligar i ésimo bit:
+    (n = (1 << i))
+
+// Testar se o i ésimo bit está ligado:
+    (n & (1 << i))
+
+// Flipar(switch) o i ésimo bit:
+    (n ^= (1 << i))
+
+# Tricks
+
+// Testar se é potencia de 2:
+    !(n & (n-1))
+
+// Contar quantos bits estão ligados:
+    __builtin_popcount(n)
+    ou
+    __builtin_popcountll(n)
+
+// Bitmask com 'n' 1s:
+    ((1 << n) - 1)
+
+// LSB:
+    (n & -n)
+
+
+// Gerar todos os Subsets:
+    for(int mask=0;mask<(1 << n); mask++) {
+        for(int idx=0;idx<n;idx++) {
+            if(mask & (1 << idx)) {
+                //está presente no subset
+                // lembrar dos parênteses,
+                // o operador '==' tem preferência
+            }
+        }
+    }
+
+
+
+// BASES DIFERENTE
+
+int int_pow(int base, int n) {
+    if(n==0) { return 1; }
+
+    int x = 1;
+    FORi(n) { x *= base; }
+    return x;
+}
+
+// Valor do Bit
+int baseB_bit_value(int value, int bit, int B) {
+    int x = (value / int_pow(B, bit));
+    return x%B;
+}
+
+// Incrementa o Bit idx na Base3
+mask += int_pow(3, idx);
+
+
+
+
+string pra ll com base customizada
+// stoll(s, nullptr, <base:16>);

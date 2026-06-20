@@ -1,0 +1,10 @@
++-----------+--------------------------------------+------------------+-----------------------------+
+| Tipo      | O que armazena                        | Tamanho Típico   | Intervalo de Valores        |
++-----------+--------------------------------------+------------------+-----------------------------+
+| int       | Números inteiros                      | 4 bytes          | aprox. -2×10^9 a 2×10^9     |
+| long long | Inteiros muito grandes                | 8 bytes          | aprox. -9×10^18 a 9×10^18   |
+| char      | Um único caractere                    | 1 byte           | Caracteres ASCII            |
+| bool      | Verdadeiro ou falso                   | 1 byte           | true ou false               |
+| float     | Números com ponto flutuante           | 4 bytes          | Precisão de ~7 dígitos      |
+| double    | Ponto flutuante com dupla precisão    | 8 bytes          | Precisão de ~15 dígitos     |
++-----------+--------------------------------------+------------------+-----------------------------+

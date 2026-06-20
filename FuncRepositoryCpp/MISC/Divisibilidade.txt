@@ -1,0 +1,56 @@
+Divisibilidade por 2:
+O último algarismo deve ser par (0, 2, 4, 6 ou 8).
+
+Divisibilidade por 3:
+A soma de todos os algarismos do número deve ser divisível por 3.
+
+Divisibilidade por 4:
+Os dois últimos algarismos devem ser 00 ou serem um número divisível por 4.
+
+Divisibilidade por 5:
+O último algarismo deve ser 0 ou 5.
+
+Divisibilidade por 6:
+Deve ser divisível por 2 e por 3 ao mesmo tempo.
+
+Divisibilidade por 7 (Chika Ofili):
+Isole o último algarismo do número e multiplique esse algarismo por 5,
+Some esse resultado ao número restante (o número original sem o último algarismo).
+Ex: 532
+53 + 2.5 = 63
+63: 6 + 3.5 = 21 -> recursivamente
+
+Divisibilidade por 8:
+Os três últimos algarismos devem ser 000 ou serem um número divisível por 8.
+
+Divisibilidade por 9:
+A soma de todos os algarismos do número deve ser divisível por 9.
+
+Divisibilidade por 11:
+A soma alternada dos algarismos (soma dos ímpares menos a soma dos pares, da direita para a esquerda) deve ser zero ou múltiplo de 11.
+Ex: 1925
+
+Divisibilidade por 13:
+Multiplique o último algarismo por 4 e some ao restante do número. O resultado deve ser divisível por 13.
+
+Divisibilidade por 17:
+Multiplique o último algarismo por 5 e subtraia do restante do número. O resultado deve ser divisível por 17 (ou 0).
+
+Divisibilidade por 19:
+Multiplique o último algarismo por 2 e some ao restante do número. O resultado deve ser divisível por 19.
+
+Divisibilidade por 20:
+Deve terminar em 00, 20, 40, 60 ou 80.
+
+Divisibilidade por 67:
+N = 10R + u
+20N = 200R + 20u
+20N = (201R - R) + 20u
+20N = 201R - (R - 20u)
+(R - 20u) = 3.67R - 20N
+O termo 20N será divisível por 67 apenas se N for divisível por 67 (já que 20 e 67 não compartilham fatores primos, pois 67 é primo).
+
+Ex: 2345
+234 - 5*20 = 134
+13 - 4*20 = -67
+se Res = Multiplo de 67 (como 0, 67 ou -67) o número original é divisível por 67.

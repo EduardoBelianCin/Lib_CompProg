@@ -1,0 +1,34 @@
+// CONVERTE "0101010" PRA INTEIRO
+ll bin_str_to_ll(string& s) {
+    ll x = 0; int tamanho = s.size();
+    for(int i=0;i<tamanho;i++) { if(s[i]=='1') { x += (ll(1) << (tamanho-i-1)); } }
+    return x;
+}
+
+
+// CONVERTE INTEIRO PRA "101010"
+string ll_to_str_bin(ll n) {
+    if(n==0) { return "0"; }
+    string res = "";
+    int idx = 0;
+    while(n > 0) {
+        if(n & (ll(1) << idx)) { res = res + '1'; n -= (ll(1) << idx); }
+        else { res = res + '0'; }
+        idx++;
+    }
+    reverse(all(res));
+    return res;
+}
+
+// CONVERTE INTEIRO PRA "00101010" com Tamanho Fixo
+string ll_to_str_bin(ll n, int size) {
+    string res = "";
+    int idx;
+    while(size > 0) {
+        idx = size-1;
+        if(n & (ll(1) << idx)) { res = res + '1'; }
+        else { res = res + '0'; }
+        size--;
+    }
+    return res;
+}

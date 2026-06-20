@@ -1,0 +1,64 @@
+1. Calcular a soma dos divisores de todos os números no intervalo [1,LIM]
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Complexidade Temporal: O(N log N)
+// Complexidade Espacial: O(N)
+
+const int LIM = 100000; // ajuste conforme necessário
+long long sumDivisors[LIM];
+
+void sieve() {
+    for (int i = 1; i < LIM; i++) {
+        for (int j = i; j < LIM; j += i) {
+            sumDivisors[j] += i;
+        }
+    }
+}
+
+int main() {
+    sieve();
+
+    // Exemplo de uso:
+    for (int i = 1; i <= 10; i++) {
+        cout << "Soma dos divisores de " << i << " = " << sumDivisors[i] << '\n';
+    }
+
+    return 0;
+}
+
+
+
+//
+
+
+2. Calcular a quantidade de divisores de todos os números no intervalo [1,LIM]
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Complexidade Temporal: O(N log N)
+// Complexidade Espacial: O(N)
+
+const int LIM = 100000; // ajuste conforme necessário
+long long numDivisors[LIM];
+
+void sieve() {
+    for (int i = 1; i < LIM; i++) {
+        for (int j = i; j < LIM; j += i) {
+            numDivisors[j]++;
+        }
+    }
+}
+
+int main() {
+    sieve();
+
+    // Exemplo de uso:
+    for (int i = 1; i <= 10; i++) {
+        cout << "Quantidade de divisores de " << i << " = " << numDivisors[i] << '\n';
+    }
+
+    return 0;
+}

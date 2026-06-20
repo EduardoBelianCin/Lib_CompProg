@@ -1,0 +1,4 @@
+(a+b)^n = Somatorio de i=0 até n de binomial(n, i) * a^(n-i) * b^(i)
+o elevado do a e do b podem ser trocados se necessario / (n-i) por (i)
+
+(1-x)^-n = Somatorio de i=0 até o infinito de binomial(n+i-1, i) * x^(i)

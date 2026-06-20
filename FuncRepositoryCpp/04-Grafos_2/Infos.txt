@@ -1,0 +1,11 @@
+Dijkstra
+O(N+M log N)
+Caminho de um para todos. Pesos positivos.
+
+Bellman-Ford
+O(N * M)
+Caminho de um para todos. Pesos podem ser negativos.
+
+Floyd-Warshall
+O(N^3)
+Caminho de todos para todos.
