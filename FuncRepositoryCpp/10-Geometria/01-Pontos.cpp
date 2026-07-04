@@ -29,21 +29,39 @@ struct Point {
     Point operator / (const double k) const {return Point(x/k, y/k);}
 };
 
+// Produto Escalar => Se > 0: ângulo agudo (<90°); Se == 0: perpendiculares; Se < 0: ângulo obtuso (>90°).
 double dot(const Point& p, const Point& q) { return p.x*q.x + p.y*q.y; }
 
+// Produto Vetorial (Cross Product): Retorna a área do paralelogramo formado pelos vetores.
+// Se > 0: q está à esquerda de p; Se == 0: colineares; Se < 0: q está à direita de p (sentido horário).
 double cross(const Point& p, const Point& q) { return p.x*q.y - p.y*q.x; }
 
+// Norma (Magnitude/Comprimento): Retorna o tamanho do vetor a partir da origem (0,0).
 double norm(const Point& p) { return sqrt(p.x*p.x + p.y*p.y); }
 
-double dist(const Point& p, const Point& q) { return sqrt((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y)); }
+// Disntacia entre 2 pontos
+double dist(const Point& p, const Point& q) { return norm(p-q); }
 
+// Distância ao quadrado entre 2 pontos
 double dist2(const Point& p, const Point& q) { return dot(p-q, p-q); }
 
-Point normalize(const Point &p) { return p/sqrt(p.x*p.x + p.y*p.y); }
+// Normalizar vetor (Vetor Unitario): Mantém a direção do vetor, mas define seu comprimento como 1.
+Point normalize(const Point &p) { return p / norm(p); }
 
+// Angulo entre 2 vetores: Retorna o ângulo orientado (com sinal) de p até q, variando de -PI a PI.
 double angle(const Point& p, const Point& q) { return atan2(cross(p, q), dot(p, q)); }
 
+// Angulo com a origem: Retorna o ângulo absoluto do ponto em relação ao eixo X positivo (coordenada polar).
 double angle(const Point& p) { return atan2(p.y, p.x); }
+
+// Rotaciona um vetor no sentido horário por um ângulo 'ang' (em radianos)
+Point rotate_horario(const Point &p, double ang) {
+    Point q;
+    q.x = p.x * cos(ang) + p.y * sin(ang);
+    q.y = -p.x * sin(ang) + p.y * cos(ang);
+    return q;
+}
+Point rotate_antihorario(const Point &p, double ang) { return rotate_horario(p, -ang); }
 
 
 
