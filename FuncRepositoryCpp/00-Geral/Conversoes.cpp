@@ -22,15 +22,17 @@ ll bin_str_to_ll(string& s) {
     for(int i=0;i<tamanho;i++) { if(s[i]=='1') { x += (ll(1) << (tamanho-i-1)); } }
     return x;
 }
-string ll_to_str_bin(ll n) {
+string ll_to_str_bin(ll n, int sz=0) {
     if(n==0) { return "0"; }
     string res = "";
     int idx = 0;
     while(n > 0) {
-        if(n & (ll(1) << idx)) { res = res + '1'; n -= (ll(1) << idx); }
-        else { res = res + '0'; }
+        if(n & (ll(1) << idx)) { res += '1'; n -= (ll(1) << idx); }
+        else { res += '0'; }
         idx++;
     }
+    // Preenche com 0's
+    FORi(sz-res.size()) { res += '0'; }
     reverse(all(res));
     return res;
 }

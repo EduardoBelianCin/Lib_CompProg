@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define FORi(n) for(int i=0;i<n;i++)
 
-// tratar os Points como ponto flutuaente apenas se for necessario, senao faz com int ou ll
+// tratar os Points como ponto flutuante apenas se for necessario, senao faz com int ou ll
 
 const double EPS = 1e-9;
 int cmp(double a, double b) {
@@ -62,6 +63,21 @@ Point rotate_horario(const Point &p, double ang) {
     return q;
 }
 Point rotate_antihorario(const Point &p, double ang) { return rotate_horario(p, -ang); }
+
+// Area com Sinal
+double sig_area(Point p, Point q, Point r) {
+    double x = cross(q-p, r-q);
+	return x;
+}
+// Area do Polígono de Vertices em V
+double pol_area(vector<Point> V) {
+    int n = V.size();
+	double soma = 0;
+	FORi(n) {
+		soma += sig_area(Point(0,0), V[i], V[(i+1) % n]);
+    }
+	return abs(soma);
+}
 
 
 
