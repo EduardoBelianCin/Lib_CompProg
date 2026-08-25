@@ -65,18 +65,17 @@ Point rotate_horario(const Point &p, double ang) {
 Point rotate_antihorario(const Point &p, double ang) { return rotate_horario(p, -ang); }
 
 // Area com Sinal
-double sig_area(Point p, Point q, Point r) {
-    double x = cross(q-p, r-q);
-	return x;
+double sig_area(Point a, Point b, Point c) {
+    return cross(b-a, c-b);
 }
 // Area do Polígono de Vertices em V
 double pol_area(vector<Point> V) {
     int n = V.size();
 	double soma = 0;
-	FORi(n) {
+	for(int i = 0; i < n; i++) {
 		soma += sig_area(Point(0,0), V[i], V[(i+1) % n]);
     }
-	return abs(soma);
+	return abs(soma) / 2.0;
 }
 
 
