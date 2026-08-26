@@ -5,13 +5,13 @@ using ll = long long;
 
 const int MAXN = 1e5 + 10;
 
-vector<ll> djikstra(vector<vector<pli>> adj) {
+vector<ll> djikstra(vector<vector<pli>> &adj, int ini=1) {
     vector<ll> dist(MAXN, LLONG_MAX);
     priority_queue<pli, vector<pli>, greater<pli>> pq;
 
     // custo e inicial
-    pq.push({0,1});
-    dist[1] = 0;
+    pq.push({0, ini});
+    dist[ini] = 0;
 
     while(!pq.empty()) {
         auto [total, atual] = pq.top(); pq.pop();
