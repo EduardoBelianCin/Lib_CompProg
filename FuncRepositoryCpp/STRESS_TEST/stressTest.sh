@@ -1,5 +1,5 @@
-P=solve   #mude pro filename do codigo
-Q=brute  #mude pro filename do brute [correto]
+P = solve   #mude pro filename do codigo
+Q = brute  #mude pro filename do brute [correto]
 g++ ${P}.cpp -o sol -O2 || exit 1
 g++ ${Q}.cpp -o brt -O2 || exit 1
 g++ gen.cpp  -o gen -O2 || exit 1

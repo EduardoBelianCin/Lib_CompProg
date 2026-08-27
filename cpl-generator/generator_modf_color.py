@@ -276,7 +276,7 @@ def scan_library_files():
         return categorized_files
 
     # Criamos uma lista com as extensões que você quer incluir
-    for ext in ['*.cpp', '*.txt']:
+    for ext in ['*.cpp', '*.txt', '*.sh']:
         # O rglob vai buscar recursivamente tanto .cpp quanto .txt
         for path in root_directory.rglob(ext):
             category = str(path.parent.relative_to(root_directory)).replace('\\', '/')
