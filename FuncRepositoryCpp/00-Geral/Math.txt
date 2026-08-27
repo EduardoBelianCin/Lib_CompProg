@@ -1,15 +1,5 @@
-ll a = 10, b = 3;
-
-// Exemplo de ceil: (10 / 3) = 3.33 -> 4
-ll resultado_ceil = ceil((double)a / b);
-
-// Exemplo de floor: (10 / 3) = 3.33 -> 3
-ll resultado_floor = floor((double)a / b);
-
 // CEIL DE INTS
 Ceil de a/b: (a + b - 1) / b
-
-
 
 
 // TERMO GERAL DA P.A

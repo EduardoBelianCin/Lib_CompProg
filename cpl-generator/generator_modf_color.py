@@ -131,13 +131,13 @@ def write_colored_code(pdf, lexer, content):
     
     # Token style mapping
     token_colors = {
-        Token.Comment: (0,0,0),
-        Token.Comment.Preproc: (0,0,0),
-        Token.Keyword: (0,0,0),
-        Token.String: (0,0,0),
-        Token.Name.Function: (0,0,0),
-        Token.Number: (0,0,0),
-        Token.Operator: (0,0,0)
+        Token.Comment: (146, 131, 116),
+        Token.Comment.Preproc: (143, 63, 113),
+        Token.Keyword: (157, 0, 6),
+        Token.String: (121, 116, 14),
+        Token.Name.Function: (7, 102, 120),
+        Token.Number: (66, 123, 88),
+        Token.Operator: (175, 58, 3)
     }
 
     for token_type, token_string in tokens:
@@ -198,11 +198,11 @@ def draw_toc(pdf, toc_data, user_info, page_offset=0):
     for category, items in toc_data.items():
         pdf.check_space(8)
         pdf.set_font(pdf.code_font, 'B', 9)
-        pdf.set_text_color(0,0,0)
+        pdf.set_text_color(220, 50, 47)
         pdf.cell(pdf.col_width, 5, category.upper(), new_x='LMARGIN', new_y='NEXT')
         
         pdf.set_font(pdf.code_font, 'B', 7.5)
-        pdf.set_text_color(0,0,0)
+        pdf.set_text_color(0, 0, 0)
         
         for name, page in items:
             pdf.check_space(3.0)
@@ -231,7 +231,7 @@ def draw_algorithms(pdf, library_data, lexer, save_toc=False):
         pdf.check_space(10)
         pdf.ln(2)
         pdf.set_font(pdf.code_font, 'B', 10)
-        pdf.set_text_color(0,0,0)
+        pdf.set_text_color(220, 50, 47)
         pdf.cell(pdf.col_width, 6, category_name.upper(), align='L', new_x='LMARGIN', new_y='NEXT')
         pdf.ln(1)
 
@@ -324,7 +324,7 @@ if __name__ == '__main__':
     if lib_data:
         user_info = {
             'name': 'Eduardo Belian',
-            'team': 'MaratonaCin',
+            'team': 'Deixa de ser BOT',
             'icon_path': 'icon.png'
         }
         generate_pdf(lib_data, user_info)

@@ -33,7 +33,6 @@ struct Point {
 
 double cross(const Point& p, const Point& q) { return p.x*q.y - p.y*q.x; }
 
-
 // PELO MENOS 3 PONTOS DISTINTOS, SE PONTOS FOREM TODOS COLINEARES O CONVEX_HULL TERA AREA = 0
 vector<Point> convexHull(vector<Point>& pts, bool sorted = false) {
     int n = pts.size();
