@@ -73,7 +73,9 @@ int main() {
     auto Ub = multi_numeros.upper_bound(4);
     auto Lb = multi_numeros.lower_bound(8);
 
+    // Proximo Iterador
     auto Proximo = next(Ub);
+    // Iterador Anterior
     auto Anterior = prev(Ub);
 
     // 1. Pegando o MENOR (Primeiro elemento)

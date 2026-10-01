@@ -81,15 +81,6 @@ int main() {
     } catch (const out_of_range& e) {
         cerr << "Erro de conversão (fora do range): " << e.what() << endl;
     }
-    
-    // Método clássico (via Stringstream)
-    stringstream ss;
-    ss << "54321 3.14"; // Coloca coisas na stream
-    int i_val;
-    double d_val;
-    ss >> i_val >> d_val; // Extrai coisas da stream
-    cout << "Stringstream (int): " << i_val << endl;
-    cout << "Stringstream (double): " << d_val << endl;
 
     return 0;
 }

@@ -10,24 +10,16 @@ void demoPrefixSum() {
     int n = v.size();
 
     // Cria um vetor prefix_sum de tamanho n
-    // prefix_sum[i] = soma de v[0]...v[i]
-    vector<long long> prefix_sum(n);
-    
-    // Método 1: Usando partial_sum (do <numeric>)
-    partial_sum(v.begin(), v.end(), prefix_sum.begin());
+    // prefix_sum[i] = soma de v[0]...v[i-1]
+    // soma dos i primeiros valores
+    vector<long long> prefix_sum(n+1, 0);
 
-    /* // Método 2: Manual (mais comum em competições)
-    prefix_sum[0] = v[0];
-    for (int i = 1; i < n; ++i) {
-        prefix_sum[i] = prefix_sum[i-1] + v[i];
+
+    // Método 1: Manual (mais comum em competições)
+    prefix_sum[0] = 0;
+    for (int i = 0; i < n; i++) {
+        prefix_sum[i+1] = prefix_sum[i] + v[i];
     }
-    */
-
-    cout << "Vetor original: ";
-    for(int x : v) cout << x << " ";
-    cout << "\nVetor Prefix Sum: ";
-    for(long long x : prefix_sum) cout << x << " ";
-    cout << endl;
 
     // --- Consulta de Intervalo O(1) ---
     // Queremos a soma do intervalo [i, j] (inclusivo)
@@ -35,10 +27,7 @@ void demoPrefixSum() {
     int j = 5; // (valor 4)
     // Soma(i, j) = Soma(0, j) - Soma(0, i-1)
     
-    long long soma_intervalo = prefix_sum[j];
-    if (i > 0) {
-        soma_intervalo -= prefix_sum[i-1];
-    }
+    long long soma_intervalo = prefix_sum[j+1] - prefix_sum[i];
     
     // Soma = 3 + 5 + 7 + 4 = 19
     cout << "Soma do intervalo [" << i << ", " << j << "] = " << soma_intervalo << endl;

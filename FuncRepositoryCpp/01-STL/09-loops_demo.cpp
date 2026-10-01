@@ -58,13 +58,13 @@ int main() {
     }
 
 
-    // NEXT_PERMUTATION (Lembrar da ordem inicial ser o menor valor possivel)
+    // NEXT_PERMUTATION (Lembrar da ordem inicial ser o menor valor possivel, ou seja, ordenado)
+    // vai gerar todas as permutações do vetor/sequencia, da menor pra maior
 
-    vector<int> Seq = {1,2,3,4,5,6,7,8};
+    vector<int> Seq = {6,8,7,3,5,4,2,1};
+    sort(Seq.begin(), Seq.end());
     do {
-        for(int x : Seq) {
-            cout << x << "\n";
-        }
+        for(int x : Seq) { cout << x << "\n"; }
     } while(next_permutation(all(Seq)));
 
     return 0;

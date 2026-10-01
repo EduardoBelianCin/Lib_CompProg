@@ -44,11 +44,6 @@ int main() {
     cout << "T2 (desempacotado): Nome=" << nome_t2 
               << ", ID=" << id_t2 
               << ", Média=" << media_t2 << endl;
-    
-    // UNIQUE
-    vector<int> v = {1,2,2,3,3,3,2,4,4};
-    sort(v.begin(), v.end());
-    v.erase(unique(v.begin(), v.end()), v.end());
 
     return 0;
 }

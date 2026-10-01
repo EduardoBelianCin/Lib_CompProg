@@ -53,5 +53,17 @@ int main() {
     v1.clear(); // Remove todos os elementos
     cout << "Tamanho de v1 após clear: " << v1.size() << endl;
 
+
+    // VETOR DE ELEMENTOS UNICOS
+    vector<int> v = {1,2,2,3,3,3,2,4,4};
+    sort(v.begin(), v.end());
+    v.erase(unique(v.begin(), v.end()), v.end());
+
+
+    // Valor minimo do vetor / O(n) busca linear
+    int Min = *min_element(v.begin(), v.end());
+    // Valor maximo do vetor / O(n) busca linear
+    int Max = *max_element(v.begin(), v.end());
+
     return 0;
 }
